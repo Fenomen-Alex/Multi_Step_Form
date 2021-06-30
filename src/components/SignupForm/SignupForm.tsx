@@ -4,19 +4,22 @@ import ProfileForm from './ProfileForm';
 import SocialForm from './SocialForm';
 import Review from './Review';
 import StepLinks from "./StepLinks";
+import {SignupFormProvider} from "./SignupFormContext";
 
 const SignupForm = (): JSX.Element => {
   return (
-      <div>
+      <SignupFormProvider>
+        <div>
 
-        <StepLinks />
+          <StepLinks/>
 
-        <Switch>
-          <Route path="/" exact component={ProfileForm}/>
-          <Route path="/social" component={SocialForm}/>
-          <Route path="/review" component={Review}/>
-        </Switch>
-      </div>
+          <Switch>
+            <Route path="/" exact component={ProfileForm}/>
+            <Route path="/social" component={SocialForm}/>
+            <Route path="/review" component={Review}/>
+          </Switch>
+        </div>
+      </SignupFormProvider>
   );
 };
 
