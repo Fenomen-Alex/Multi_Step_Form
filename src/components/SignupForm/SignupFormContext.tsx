@@ -10,7 +10,7 @@ export const SignupFormContext = createContext({});
 
 export const useSignupForm = () => useContext(SignupFormContext);
 
-export const SignupFormProvider = ({children}) => {
+export const SignupFormProvider = ({children}: JSX.ElementChildrenAttribute) => {
   const [profile, setProfile] = useState<ProfileType>({});
   const [social, setSocial] = useState({});
 

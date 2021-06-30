@@ -9,8 +9,9 @@ const SocialForm = (): JSX.Element => {
   const history = useHistory();
   const {social, setSocial}: any = useSignupForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     history.push('/review')
+    setSocial(data);
   }
 
   return (
@@ -19,7 +20,6 @@ const SocialForm = (): JSX.Element => {
           <h2>How can we find you on social?</h2>
           <input
               type="text"
-              name="twitter"
               placeholder="What's your Twitter?"
               defaultValue={social.twitter}
               {...register("twitter", {required: true})}
@@ -27,7 +27,6 @@ const SocialForm = (): JSX.Element => {
           <p>{errors.twitter && 'Twitter is required'}</p>
           <input
               type="text"
-              name="facebook"
               placeholder="What's your Facebook?"
               defaultValue={social.facebook}
               {...register("facebook", {required: true})}

@@ -26,7 +26,6 @@ const ProfileForm = () => {
           <h2>Tell us about yourself</h2>
           <input
               type="text"
-              name="name"
               placeholder="What's your name?"
               defaultValue={profile.name}
               {...register("name", {required: true})}
@@ -34,7 +33,6 @@ const ProfileForm = () => {
           <p>{errors.name && 'Name is required'}</p>
           <input
               type="email"
-              name="email"
               placeholder="What's your email?"
               defaultValue={profile.email}
               {...register("email", {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 
-const Animator = ({children}) => {
+const Animator = ({children}: JSX.ElementChildrenAttribute) => {
   return (
       <motion.div
           style={{ position: 'absolute' }}

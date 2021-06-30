@@ -26,12 +26,12 @@ h6 {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: center;
 }
 
 .signup-form {
-  min-width: 500px;
+  max-width: 500px;
   min-height: 600px;
   position: relative;
 }
@@ -101,12 +101,12 @@ form {
   background: #fff;
   border-radius: 30px;
   padding: 40px;
-  min-width: 500px;
+  max-width: 500px;
   min-height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 form p {
@@ -138,7 +138,7 @@ input[type='email']:focus {
 }
 
 input[type='submit'] {
-  width: 40%;
+  width: fit-content;
   margin-left: 60%;
   margin-bottom: 0;
   padding: 12px;

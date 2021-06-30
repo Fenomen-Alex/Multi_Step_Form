@@ -1,14 +1,30 @@
 import * as React from 'react';
 import {useSignupForm} from "./SignupFormContext";
 import Animator from "./Animator";
+import {SubmitHandler} from "react-hook-form";
+import {FormEvent} from "react";
+
+type FormDataType = {
+  profile: {
+    name: string
+    email: string
+  }
+  social: {
+    twitter: string
+    facebook: string
+  }
+}
 
 const Review = (): JSX.Element => {
 
   const {profile, social}: any = useSignupForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Submit completed!')
+  const handleSubmit = (event: FormEvent): SubmitHandler<FormDataType> => {
+    event.preventDefault();
+    const data = {...profile, ...social};
+    console.log(data);
+    alert('Submit completed!');
+    return data;
   }
 
   return (
